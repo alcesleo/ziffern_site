@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function () {
+    var input = $('#rot input');
+
+    // Autoselect input
+    input.focus(function () { this.select(); });
+});
+
