@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 
 
 gem "slim-rails"
+gem "normalize-rails"
 group :development do
   gem "pry-rails"
   gem "better_errors"
