@@ -6,7 +6,7 @@ class GermanNumber
   EmptyNumber = Struct.new(:input, :output)
 
   def self.from_string(string)
-    return EmptyNumber.new(string.to_s, 'Please enter a number') if string.to_s.empty?
+    return EmptyNumber.new(string.to_s, 'Bitte geben Sie eine Zahl ein') if string.to_s.empty?
     new(string)
   end
 
