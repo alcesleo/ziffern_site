@@ -27,6 +27,11 @@ html, body {
     #rot {
         background: #F00;
 
+        form {
+            height: 100%;
+            width: 100%;
+        }
+
         input {
             text-align: center;
             background-color: transparent;
@@ -38,5 +43,6 @@ html, body {
     }
     #gold {
         background: #FC0;
+        word-wrap: break-word;
     }
 }

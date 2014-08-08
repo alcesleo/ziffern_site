@@ -1,5 +1,6 @@
 class ZiffernController < ApplicationController
   def index
-    @hi = 'hello'
+    @german = GermanNumber.from_string(params[:number])
+    render :flag
   end
 end
