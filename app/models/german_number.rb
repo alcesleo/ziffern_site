@@ -15,7 +15,7 @@ class GermanNumber
   end
 
   def output
-    @output ||= converter.to_german(sanitized_input)
+    @output ||= converter.to_german(sanitized_input) rescue 'zu groß'
   end
 
   private

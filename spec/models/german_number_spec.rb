@@ -5,13 +5,13 @@ describe GermanNumber do
   it 'returns a placeholder if called with nil' do
     gn = GermanNumber.from_string(nil)
     expect(gn.input).to eq ''
-    expect(gn.output).to eq 'Please enter a number'
+    expect(gn.output).to eq 'Bitte geben Sie eine Zahl ein'
   end
 
   it 'returns a placeholder if called with empty string' do
     gn = GermanNumber.from_string('')
     expect(gn.input).to eq ''
-    expect(gn.output).to eq 'Please enter a number'
+    expect(gn.output).to eq 'Bitte geben Sie eine Zahl ein'
   end
 
   it 'has the same input no matter what' do
@@ -25,6 +25,10 @@ describe GermanNumber do
 
   it 'ignores whitespace' do
     expect(GermanNumber.from_string('1 1').output).to eq 'elf'
+  end
+
+  it 'does not crash when getting a too large number' do
+    expect(GermanNumber.from_string('9' * 100).output).to eq 'zu groß'
   end
 
 end
