@@ -14,6 +14,11 @@ describe GermanNumber do
     expect(gn.output).to eq 'Bitte geben Sie eine Zahl ein'
   end
 
+  it 'strips the text' do
+    gn = GermanNumber.from_string(' ')
+    expect(gn.input).to eq ''
+  end
+
   it 'has the same input no matter what' do
     gn = GermanNumber.from_string('asdf')
     expect(gn.input).to eq 'asdf'
@@ -28,7 +33,7 @@ describe GermanNumber do
   end
 
   it 'does not crash when getting a too large number' do
-    expect(GermanNumber.from_string('9' * 100).output).to eq 'zu groß'
+    expect(GermanNumber.from_string('9' * 127).output).to eq 'zu groß'
   end
 
 end
