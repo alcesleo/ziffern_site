@@ -19,7 +19,7 @@ html, body {
         text-align: center;
         font-size: 3em;
 
-        height: 33.33%;
+        min-height: 33.33%;
         overflow: hidden;
     }
     #schwarz {
@@ -46,6 +46,5 @@ html, body {
     #gold {
         background: #FC0;
         word-wrap: break-word;
-        overflow: scroll;
     }
 }
