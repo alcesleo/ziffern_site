@@ -20,6 +20,6 @@ class GermanNumber
 
   private
   def sanitized_input
-    input.gsub(/\s+/, '').to_f
+    input.gsub(/\s+/, '')
   end
 end

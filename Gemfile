@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# The conversion algorithm
+gem 'ziffern'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -11,12 +13,11 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
-
 gem "slim-rails"
 gem "normalize-rails"
+
 group :development do
+  gem 'spring'
   gem "pry-rails"
   gem "better_errors"
   gem "binding_of_caller"
