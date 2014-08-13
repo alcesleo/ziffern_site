@@ -21,6 +21,6 @@ class GermanNumber
 
   private
   def sanitized_input
-    input.gsub(/\s+/, '')
+    input.gsub(/\s+/, '').gsub(/,/, '.')
   end
 end
