@@ -36,6 +36,10 @@ describe GermanNumber do
     expect(GermanNumber.from_string('9' * 127).output).to eq 'zu groß'
   end
 
+  it 'recognizes invalid numbers' do
+    expect(GermanNumber.from_string('invalid').output).to eq 'ungültig'
+  end
+
   it 'handles commas as decimal points' do
     expect(GermanNumber.from_string('9,9').output).to eq 'neun Komma neun'
   end

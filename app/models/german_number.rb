@@ -16,7 +16,13 @@ class GermanNumber
   end
 
   def output
-    @output ||= converter.to_german(sanitized_input) rescue 'zu groß'
+    @output ||= begin
+      converter.to_german(sanitized_input)
+    rescue Ziffern::TooLargeNumberError
+      'zu groß'
+    rescue Ziffern::InvalidNumberError
+      'ungültig'
+    end
   end
 
   private
