@@ -1,9 +1,9 @@
 require 'ziffern'
 
 class GermanNumber
-  attr_reader :input, :converter
+  attr_reader :number, :converter
 
-  EmptyNumber = Struct.new(:input, :output)
+  EmptyNumber = Struct.new(:number, :text)
 
   def self.from_string(string)
     string = string.to_s.strip
@@ -11,12 +11,12 @@ class GermanNumber
     new(string)
   end
 
-  def initialize(input, converter = Ziffern.new)
-    @input, @converter = input, converter
+  def initialize(number, converter = Ziffern.new)
+    @number, @converter = number, converter
   end
 
-  def output
-    @output ||= begin
+  def text
+    @text ||= begin
       converter.to_german(sanitized_input)
     rescue Ziffern::TooLargeNumberError
       'zu groß'
@@ -27,6 +27,6 @@ class GermanNumber
 
   private
   def sanitized_input
-    input.gsub(/\s+/, '').gsub(/,/, '.')
+    number.gsub(/\s+/, '').gsub(/,/, '.')
   end
 end
