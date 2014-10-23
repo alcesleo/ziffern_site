@@ -16,13 +16,11 @@ class GermanNumber
   end
 
   def text
-    @text ||= begin
-      converter.to_german(sanitized_input)
-    rescue Ziffern::TooLargeNumberError
-      'zu groß'
-    rescue Ziffern::InvalidNumberError
-      'ungültig'
-    end
+    converter.to_german(sanitized_input)
+  rescue Ziffern::TooLargeNumberError
+    'zu groß'
+  rescue Ziffern::InvalidNumberError
+    'ungültig'
   end
 
   private
