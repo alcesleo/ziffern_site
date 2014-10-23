@@ -7,8 +7,11 @@ class GermanNumber
 
   def self.from_string(string)
     string = string.to_s.strip
-    return EmptyNumber.new(string, 'Bitte geben Sie eine Zahl ein') if string.empty?
-    new(string)
+    if not string.empty?
+      new(string)
+    else
+      EmptyNumber.new(string, 'Bitte geben Sie eine Zahl ein') if string.empty?
+    end
   end
 
   def initialize(number, converter = Ziffern.new)
