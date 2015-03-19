@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.1"
+
 # The conversion algorithm
 gem 'ziffern', '~> 1.0'
 
